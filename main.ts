@@ -1,24 +1,45 @@
 import { Hono } from "https://deno.land/x/hono@v4.0.0/mod.ts";
 import { html, css, Style } from "https://deno.land/x/hono/helper.ts";
 
-export const app = new Hono();
+const app = new Hono();
+
+const Encabezado = (titulo, descripcion) => html`
+  <header>
+    <h1> ${titulo} </h1>
+    <p> ${descripcion} </p>
+  </header>
+`
 
 app.get("/", (c) => {
-  return c.text("Gamma Tech & Life");
+  const props = {
+    titulo:"Gamma Tech and Life",
+    descripcion: "Iniciativa comercial"
+  }
+  return c.html(Encabezado(props.titulo, props.descripcion))
 });
 
 app.get("/dashboard", (c) => {
-  return c.text("Dashboard");
+  const props = {
+    titulo:"Dashboard",
+    descripcion: "Descripcion gráfica de los datos actuales de alguna API"
+  }
+  return c.html(Encabezado(props.titulo, props.descripcion))
 });
 
 app.get("/frutakids", (c) => {
-  return c.text("Frutakids");
+  const props = {
+    titulo:"Frutakids",
+    descripcion: "Juego educativo para niños"
+  }
+  return c.html(Encabezado(props.titulo, props.descripcion))
 });
 
 app.get("/horoscopo", (c) => {
-  return c.text("Horoscopo");
+  const props = {
+    titulo:"Horóscopo",
+    descripcion: "Predicciones astrológicas de algún tipo"
+  }
+  return c.html(Encabezado(props.titulo, props.descripcion))
 });
-
-
 
 Deno.serve(app.fetch);
