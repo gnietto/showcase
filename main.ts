@@ -151,10 +151,10 @@ app.get("/frutakids", (c) => {
   );
 });
 
-app.get("/horoscopo", (c) => {
+app.get("/comic", (c) => {
   const args = {
-    titulo: "Horóscopo",
-    descripcion: "Predicciones astrológicas de algún tipo",
+    titulo: "Comic",
+    descripcion: "Esta sección muestra un comic aleatorio del autor xkcd",
     placeholder:
       "Este es un contenedor para el cuerpo de cada seccion del showcase",
     Encabezado,
