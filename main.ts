@@ -151,12 +151,20 @@ app.get("/frutakids", (c) => {
   );
 });
 
-app.get("/comic", (c) => {
+app.get("/comic", async (c) => {
+  const respuestaAPI = await fetch("https://xkcd.com/info.0.json")
+  const data = await respuestaAPI.json();
+  const numeroDeComic = data.num;
+  const numeroAleatorio = Math.floor(Math.random() * (numeroDeComic - 1)) + 1;
+
+  const JSONDeComic = await fetch(`https://xkcd.com/${numeroAleatorio}/info.0.json`);
+  const ObjetoComic = await JSONDeComic.json();
+  const stringImgSrc = html`<img src="${ObjetoComic.img}" alt="imagen de comic del autor xkcd mostrada aleatoriamente cada vez que se muestra esta ruta" />`;
+  
   const args = {
     titulo: "Comic",
     descripcion: "Esta sección muestra un comic aleatorio del autor xkcd",
-    placeholder:
-      "Este es un contenedor para el cuerpo de cada seccion del showcase",
+    placeholder: stringImgSrc,
     Encabezado,
     Cuerpo,
     estilo1: "tipografiaTitulo",
