@@ -48,6 +48,12 @@ const vistaHtml = (componente1, componente2) =>
       </style>
     </head>
     <body>
+      <nav>
+        <div> <a href="/"> Inicio </a> </div>
+        <div> <a href="/dashboard"> Dashboard </a> </div>
+        <div> <a href="/frutakids"> Frutakids </a> </div>
+        <div> <a href="/comic"> Comic </a> </div>
+      </nav>
       <div>
         ${componente1}
       </div>
@@ -77,8 +83,7 @@ app.get("/", (c) => {
   const args = {
     titulo: "Gamma Tech and Life",
     descripcion: "Iniciativa comercial",
-    placeholder:
-      "Este es un contenedor para el cuerpo de cada seccion del showcase",
+    placeholder: "... texto de relleno...",
     Encabezado,
     Cuerpo,
     estilo1: "tipografiaTitulo",
@@ -94,7 +99,7 @@ app.get("/", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder),
+      args.Cuerpo(args.placeholder)
     ),
   );
 });
@@ -120,7 +125,7 @@ app.get("/dashboard", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder),
+      args.Cuerpo(args.placeholder)
     ),
   );
 });
@@ -146,7 +151,7 @@ app.get("/frutakids", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder),
+      args.Cuerpo(args.placeholder)
     ),
   );
 });
@@ -180,7 +185,7 @@ app.get("/comic", async (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder),
+      args.Cuerpo(args.placeholder)
     ),
   );
 });
