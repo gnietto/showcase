@@ -99,7 +99,7 @@ app.get("/", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder)
+      args.Cuerpo(args.placeholder),
     ),
   );
 });
@@ -125,7 +125,7 @@ app.get("/dashboard", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder)
+      args.Cuerpo(args.placeholder),
     ),
   );
 });
@@ -151,21 +151,24 @@ app.get("/frutakids", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder)
+      args.Cuerpo(args.placeholder),
     ),
   );
 });
 
 app.get("/comic", async (c) => {
-  const respuestaAPI = await fetch("https://xkcd.com/info.0.json")
+  const respuestaAPI = await fetch("https://xkcd.com/info.0.json");
   const data = await respuestaAPI.json();
   const numeroDeComic = data.num;
   const numeroAleatorio = Math.floor(Math.random() * (numeroDeComic - 1)) + 1;
 
-  const JSONDeComic = await fetch(`https://xkcd.com/${numeroAleatorio}/info.0.json`);
+  const JSONDeComic = await fetch(
+    `https://xkcd.com/${numeroAleatorio}/info.0.json`,
+  );
   const ObjetoComic = await JSONDeComic.json();
-  const stringImgSrc = html`<img src="${ObjetoComic.img}" alt="imagen de comic del autor xkcd mostrada aleatoriamente cada vez que se muestra esta ruta" />`;
-  
+  const stringImgSrc =
+    html`<img src="${ObjetoComic.img}" alt="imagen de comic del autor xkcd mostrada aleatoriamente cada vez que se muestra esta ruta" />`;
+
   const args = {
     titulo: "Comic",
     descripcion: "Esta sección muestra un comic aleatorio del autor xkcd",
@@ -185,7 +188,7 @@ app.get("/comic", async (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder)
+      args.Cuerpo(args.placeholder),
     ),
   );
 });
