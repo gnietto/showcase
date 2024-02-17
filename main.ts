@@ -15,8 +15,8 @@ const vistaHtml = (componente1, componente2) =>
   <!DOCTYPE html>
   <html>
     <head>
-      <link rel="preload" as="font" href="/lora-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
-      <link rel="preload" as="font" href="/quattrocento-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
+      <link rel="preload" as="font" href="/fonts/lora-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
+      <link rel="preload" as="font" href="/fonts/quattrocento-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
       <style>
 
         @font-face{
