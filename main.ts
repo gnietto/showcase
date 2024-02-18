@@ -4,6 +4,8 @@ import {
   logger,
   serveStatic,
 } from "https://deno.land/x/hono@v4.0.0/middleware.ts";
+import { select, selectAll } from "https://esm.sh/d3-selection@3";
+import { drag } from "https://esm.sh/d3-drag@3";
 
 const app = new Hono();
 
@@ -18,7 +20,6 @@ const vistaHtml = (componente1, componente2) =>
       <link rel="preload" as="font" href="/fonts/lora-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
       <link rel="preload" as="font" href="/fonts/quattrocento-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
       <style>
-
         @font-face{
           font-family: "Lora";
           font-style: normal;
@@ -26,7 +27,6 @@ const vistaHtml = (componente1, componente2) =>
           font-display: swap;
           src: url("./fonts/lora-latin-ext-regular.woff2") format('woff2');
         }
-
         @font-face{
           font-family: "Quattrocento";
           font-style: normal;
@@ -34,17 +34,64 @@ const vistaHtml = (componente1, componente2) =>
           font-display: swap;
           src: url("./fonts/quattrocento-latin-ext-regular.woff2") format('woff2');
         }
-
         .tipografiaTitulo {
           font-family:"Quattrocento",serif;
         }
-        .tipografiaDescripcion{
+        .tipografiaDescripcion {
           font-family:"Lora",serif;
         }
         .borde {
           border-radius: 0.75rem;
           border-style: double;
-
+        }
+        .cuadrado1 {
+          width: 100px;
+          height: 100px;
+          background-color: green;
+        }
+        .cuadrado2 {
+          width: 100px;
+          height: 100px;
+          background-color: orange;
+        }
+        .cuadrado3 {
+          width: 100px;
+          height: 100px;
+          background-color: magenta;
+        }
+        .estiloMain {
+          position: relative;
+          border-style: double;
+        }
+        .flex1 {
+          display: flex;
+        }
+        .flex2 {
+          display: flex;
+        }
+        .frutaSeleccionada {
+          width: 100px;
+          height: 100px;
+          border-style: solid;
+        }
+        .cajon1 {
+          width: 100px;
+          height: 100px;
+          border-style: solid;
+        }
+        .cajon2 {
+          width: 100px;
+          height: 100px;
+          border-style: solid;
+        }
+        .cajon3 {
+          width: 100px;
+          height: 100px;
+          border-style: solid;
+        }
+        .estiloEval {
+          background-color: lime;
+        }
       </style>
     </head>
     <body>
@@ -72,12 +119,31 @@ const Encabezado = (titulo, descripcion, estilo1, estilo2, estilo3) =>
   </header>
 `;
 
-const Cuerpo = (placeholder) =>
+const Cuerpo = (placeholder, estiloMain) =>
   html`
-  <main>
+  <main class=${estiloMain}>
     ${placeholder}
   </main>
 `;
+
+const Juego = (flex1, flex2, cuadrado1, cuadrado2, cuadrado3, frutaSeleccionada, cajon1, cajon2, cajon3, estiloEval, evaluacion) => html`
+  <div class=${flex1}>
+    <div id=#cuadrado1 class=${cuadrado1}> </div>
+    <div id=#cuadrado2 class=${cuadrado2}> </div>
+    <div id=#cuadrado3 class=${cuadrado3}> </div>
+    <div id=#muestraFrutaSeleccionada class=${frutaSeleccionada}> </div>
+  </div>
+  <div class=${flex2}>
+    <div id=#recibe1 class=${cajon1}> </div>
+    <div id=#recibe2 class=${cajon2}> </div>
+    <div id=#recibe3 class=${cajon3}> </div>
+  </div>
+  <footer class=${estiloEval}> ${evaluacion} </footer>
+`;
+
+const evaluacion = () => html`
+  <div> Si cajon1 > cajon2 > cajon3 entonces mostrar cuadro verde con felicitacion </div>
+`
 
 app.get("/", (c) => {
   const args = {
@@ -89,6 +155,7 @@ app.get("/", (c) => {
     estilo1: "tipografiaTitulo",
     estilo2: "tipografiaDescripcion",
     estilo3: "borde",
+    estiloMain: null
   };
   return c.html(
     vistaHtml(
@@ -99,7 +166,7 @@ app.get("/", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder),
+      args.Cuerpo(args.placeholder, args.estiloMain),
     ),
   );
 });
@@ -115,6 +182,7 @@ app.get("/dashboard", (c) => {
     estilo1: "tipografiaTitulo",
     estilo2: "tipografiaDescripcion",
     estilo3: "borde",
+    estiloMain: null
   };
   return c.html(
     vistaHtml(
@@ -125,22 +193,34 @@ app.get("/dashboard", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder),
+      args.Cuerpo(args.placeholder, args.estiloMain),
     ),
   );
 });
 
 app.get("/frutakids", (c) => {
+
   const args = {
     titulo: "Frutakids",
     descripcion: "Juego educativo para niños",
-    placeholder:
-      "Este es un contenedor para el cuerpo de cada seccion del showcase",
+    placeholder: Juego,
     Encabezado,
     Cuerpo,
     estilo1: "tipografiaTitulo",
     estilo2: "tipografiaDescripcion",
     estilo3: "borde",
+    estiloMain: "estiloMain",
+    flex1: "flex1",
+    flex2: "flex2",
+    cuadrado1: "cuadrado1",
+    cuadrado2: "cuadrado2",
+    cuadrado3: "cuadrado3",
+    frutaSeleccionada: "frutaSeleccionada",
+    cajon1: "cajon1",
+    cajon2: "cajon2",
+    cajon3: "cajon3",
+    estiloEval: "estiloEval",
+    evaluacion
   };
   return c.html(
     vistaHtml(
@@ -151,7 +231,7 @@ app.get("/frutakids", (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder),
+      args.Cuerpo(args.placeholder(args.flex1, args.flex2, args.cuadrado1, args.cuadrado2, args.cuadrado3, args.frutaSeleccionada, args.cajon1, args.cajon2, args.cajon3, args.estiloEval,args.evaluacion()),args.estiloMain),
     ),
   );
 });
@@ -178,6 +258,7 @@ app.get("/comic", async (c) => {
     estilo1: "tipografiaTitulo",
     estilo2: "tipografiaDescripcion",
     estilo3: "borde",
+    estiloMain: null
   };
   return c.html(
     vistaHtml(
@@ -188,7 +269,7 @@ app.get("/comic", async (c) => {
         args.estilo2,
         args.estilo3,
       ),
-      args.Cuerpo(args.placeholder),
+      args.Cuerpo(args.placeholder, args.estiloMain),
     ),
   );
 });
