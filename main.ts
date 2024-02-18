@@ -155,7 +155,7 @@ app.get("/", (c) => {
     estilo1: "tipografiaTitulo",
     estilo2: "tipografiaDescripcion",
     estilo3: "borde",
-    estiloMain: null
+    estiloMain: "estiloMain"
   };
   return c.html(
     vistaHtml(
@@ -182,7 +182,7 @@ app.get("/dashboard", (c) => {
     estilo1: "tipografiaTitulo",
     estilo2: "tipografiaDescripcion",
     estilo3: "borde",
-    estiloMain: null
+    estiloMain: "estiloMain"
   };
   return c.html(
     vistaHtml(
@@ -258,7 +258,7 @@ app.get("/comic", async (c) => {
     estilo1: "tipografiaTitulo",
     estilo2: "tipografiaDescripcion",
     estilo3: "borde",
-    estiloMain: null
+    estiloMain: "estiloMain"
   };
   return c.html(
     vistaHtml(
