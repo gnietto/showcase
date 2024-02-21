@@ -4,8 +4,7 @@ import {
   logger,
   serveStatic,
 } from "https://deno.land/x/hono@v4.0.0/middleware.ts";
-import { select, selectAll } from "https://esm.sh/d3-selection@3";
-import { drag } from "https://esm.sh/d3-drag@3";
+
 
 const app = new Hono();
 
@@ -19,6 +18,8 @@ const vistaHtml = (componente1, componente2) =>
     <head>
       <link rel="preload" as="font" href="/fonts/lora-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
       <link rel="preload" as="font" href="/fonts/quattrocento-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
+      <link rel="icon" type="image/png" sizes="32x32" rel="noopener" target="_blank" href="/fonts/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" rel="noopener" target="_blank" href="/fonts/apple-touch-icon.png">
       <style>
         @font-face{
           font-family: "Lora";
@@ -200,6 +201,8 @@ app.get("/dashboard", (c) => {
 
 app.get("/frutakids", (c) => {
 
+
+  
   const args = {
     titulo: "Frutakids",
     descripcion: "Juego educativo para niños",
