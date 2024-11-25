@@ -1,18 +1,19 @@
 import { Hono } from "hono";
 import { html } from "hono/html";
 import { css, Style } from "hono/css";
+import type {FC} from "hono/jsx";
 
 export const app = new Hono();
 
-const Frutakids = (props) => (html`
+const Frutakids:FC = (props) => (html`
   <p class=${props.estilos}> Yo soy frutakids </p>
 `);
 
-const Calculadora = (props) => (html`
+const Calculadora:FC = (props) => (html`
   <p class=${props.estilos}> Y yo soy calculadora </p>
 `);
 
-const Layout = (props) => (html`
+const Layout:FC = (props) => (html`
   <!doctype html>
   <html class=${props.rootFontSize}>
     <head>
