@@ -6,7 +6,7 @@ import type { FC } from "hono/jsx";
 export const app = new Hono();
 
 const Contenedor: FC = (props) => (
-  <div>
+  <div class={props.layout}>
     {props.children}
   </div>
 );
@@ -78,9 +78,31 @@ const Frutakids: FC = (props) => (
   </div>
 );
 
-const Calculadora: FC = (props) => (html`
-  <p class=${props.estilos}> Y yo soy calculadora </p>
-`);
+const Calculadora: FC = (props) => (
+  <div class={props.estilos}>
+    <h1> Calculadora JSX </h1>
+    <p> Calcula operaciones aritméticas simples tal como una calculadora manual. </p>
+    <Contenedor layout={cx(grid, gridCols4, gridRows5, gap1)}>
+      <div class={cx(colSpan4, border2, borderSolid, textRight)}> visor </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 7 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 8 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 9 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> divide por </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 4 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 5 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 6 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> multiplica por </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 1 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 2 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 3 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> menos </div>
+      <div class={cx(border2, borderSolid, textCenter)}> 0 </div>
+      <div class={cx(border2, borderSolid, textCenter)}> . </div>
+      <div class={cx(border2, borderSolid, textCenter)}> igual </div>
+      <div class={cx(border2, borderSolid, textCenter)}> más </div>
+    </Contenedor>
+  </div>
+);
 
 const Layout: FC = (props) => (html`
   <!doctype html>
@@ -146,9 +168,13 @@ const roundedLg = css`
   border-radius: 0.5rem;
 `;
 
-const textAlign = css`
+const textCenter = css`
   text-align: center;
 `;
+
+const textRight = css`
+  text-align: right;
+`
 
 const mxAuto = css`
   margin-left: auto;
@@ -217,14 +243,39 @@ const borderSolid = css`
   border-style: solid;
 `;
 
-const border4 = css`
-  border-width: 4px;
-`;
-
 const text4xl = css`
   font-size: 2.25rem;
   line-height: 2.5rem;
 `;
+
+const grid = css`
+  display: grid;
+`;
+
+const gridCols4 = css`
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+`;
+
+const gridRows5 = css`
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+`;
+
+const colSpan4 = css`
+  grid-column: span 4 / span 4;
+`;
+
+const border2 = css`
+  border-width: 2px;
+`
+
+const border4 = css`
+  border-width: 4px;
+`
+
+const gap1 = css`
+  gap: 0.25rem;
+`
+
 
 app.get("/", (c) => {
   return c.html(
