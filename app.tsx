@@ -23,9 +23,9 @@ const FrutasInfo: FC = (props) => (
 const Boxes: FC = (props) => (
   <div class={props.estilos}>
     <div class={props.estilobox}>{props.box1}</div>
-    <div class={props.estilocomparador}>></div>
+    <div class={props.estilocomparador}> {'>'} </div>
     <div class={props.estilobox}>{props.box1}</div>
-    <div class={props.estilocomparador}>></div>
+    <div class={props.estilocomparador}> {'>'} </div>
     <div class={props.estilobox}>{props.box1}</div>
   </div>
 );
