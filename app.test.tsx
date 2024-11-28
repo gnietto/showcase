@@ -10,6 +10,14 @@ Deno.test("El servidor funciona correctamente", async (t) => {
   });
 });
 
+Deno.test("La página html está en modo estándar en vez de modo quirks", async (t) => {
+  await t.step("La página html tiene doctype correcto" , async (t) => {
+    const res = await app.request("/");
+    const contieneTexto = await res.text();
+    expect(contieneTexto).toContain("<!doctype html>");
+  });
+});
+
 Deno.test("<Presentacion /> despliega contenido", async (t) => {
   await t.step("<Presentacion /> despliega palabras clave", async (t) => {
     const res = await app.request("/");
