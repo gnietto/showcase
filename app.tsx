@@ -282,7 +282,7 @@ app.get("/", (c) => {
       <Frutakids estilos={borderDouble} />
       <Calculadora estilos={borderDouble} />
       <footer class={borderDouble}>
-        <p>Diseñado y codificado por Spaceger</p>
+        <p class={textCenter}>Diseñado y codificado por Spaceger</p>
       </footer>
     </Layout>
   );
