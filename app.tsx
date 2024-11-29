@@ -23,9 +23,9 @@ const FrutasInfo: FC = (props) => (
 const Boxes: FC = (props) => (
   <div class={props.estilos}>
     <div class={props.estilobox}>{props.box1}</div>
-    <div class={props.estilocomparador}> {'>'} </div>
+    <div class={props.estilocomparador}>{">"}</div>
     <div class={props.estilobox}>{props.box1}</div>
-    <div class={props.estilocomparador}> {'>'} </div>
+    <div class={props.estilocomparador}>{">"}</div>
     <div class={props.estilobox}>{props.box1}</div>
   </div>
 );
@@ -80,26 +80,28 @@ const Frutakids: FC = (props) => (
 
 const Calculadora: FC = (props) => (
   <div class={props.estilos}>
-    <h1> Calculadora JSX </h1>
-    <p> Calcula operaciones aritméticas simples tal como una calculadora manual. </p>
+    <h1>Calculadora JSX</h1>
+    <p>
+      Calcula operaciones aritméticas simples tal como una calculadora manual.
+    </p>
     <Contenedor layout={cx(grid, gridCols4, gridRows5, gap1)}>
-      <div class={cx(colSpan4, border2, borderSolid, textRight)}> visor </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 7 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 8 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 9 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> divide por </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 4 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 5 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 6 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> multiplica por </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 1 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 2 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 3 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> menos </div>
-      <div class={cx(border2, borderSolid, textCenter)}> 0 </div>
-      <div class={cx(border2, borderSolid, textCenter)}> . </div>
-      <div class={cx(border2, borderSolid, textCenter)}> igual </div>
-      <div class={cx(border2, borderSolid, textCenter)}> más </div>
+      <div class={cx(colSpan4, border2, borderSolid, textRight)}>visor</div>
+      <div class={cx(border2, borderSolid, textCenter)}>7</div>
+      <div class={cx(border2, borderSolid, textCenter)}>8</div>
+      <div class={cx(border2, borderSolid, textCenter)}>9</div>
+      <div class={cx(border2, borderSolid, textCenter)}>divide por</div>
+      <div class={cx(border2, borderSolid, textCenter)}>4</div>
+      <div class={cx(border2, borderSolid, textCenter)}>5</div>
+      <div class={cx(border2, borderSolid, textCenter)}>6</div>
+      <div class={cx(border2, borderSolid, textCenter)}>multiplica por</div>
+      <div class={cx(border2, borderSolid, textCenter)}>1</div>
+      <div class={cx(border2, borderSolid, textCenter)}>2</div>
+      <div class={cx(border2, borderSolid, textCenter)}>3</div>
+      <div class={cx(border2, borderSolid, textCenter)}>menos</div>
+      <div class={cx(border2, borderSolid, textCenter)}>0</div>
+      <div class={cx(border2, borderSolid, textCenter)}>.</div>
+      <div class={cx(border2, borderSolid, textCenter)}>igual</div>
+      <div class={cx(border2, borderSolid, textCenter)}>más</div>
     </Contenedor>
   </div>
 );
@@ -125,23 +127,8 @@ const rootFontSize = css`
   font-family: Arial;
 `;
 
-const presentacionBasico = css`
-  height: 15rem;
+const borderDouble = css`
   border-style: double;
-`;
-
-const frutakidsBasico = css`
-  border-style: double;
-`;
-
-const calculadoraBasico = css`
-  height: 15rem;
-  border-style: double;
-`;
-
-const footerBasico = css`
-  height: 5rem;
-  border-style: ridge;
 `;
 
 const flex = css`
@@ -174,7 +161,7 @@ const textCenter = css`
 
 const textRight = css`
   text-align: right;
-`
+`;
 
 const mxAuto = css`
   margin-left: auto;
@@ -266,21 +253,20 @@ const colSpan4 = css`
 
 const border2 = css`
   border-width: 2px;
-`
+`;
 
 const border4 = css`
   border-width: 4px;
-`
+`;
 
 const gap1 = css`
   gap: 0.25rem;
-`
-
+`;
 
 app.get("/", (c) => {
   return c.html(
     <Layout estilos={<Style />} rootFontSize={rootFontSize}>
-      <header class={presentacionBasico}>
+      <header class={borderDouble}>
         <h1>Spaceger</h1>
         <p>
           Esta colección de aplicaciones web son parte de mi portafolio para el
@@ -293,9 +279,9 @@ app.get("/", (c) => {
           modernas (Agile y DevOps), y de mantenimiento de software existente.
         </p>
       </header>
-      <Frutakids estilos={frutakidsBasico} />
-      <Calculadora estilos={calculadoraBasico} />
-      <footer class={footerBasico}>
+      <Frutakids estilos={borderDouble} />
+      <Calculadora estilos={borderDouble} />
+      <footer class={borderDouble}>
         <p>Diseñado y codificado por Spaceger</p>
       </footer>
     </Layout>,
