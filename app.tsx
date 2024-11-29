@@ -284,6 +284,6 @@ app.get("/", (c) => {
       <footer class={borderDouble}>
         <p>Diseñado y codificado por Spaceger</p>
       </footer>
-    </Layout>,
+    </Layout>
   );
 });
