@@ -263,21 +263,35 @@ const gap1 = css`
   gap: 0.25rem;
 `;
 
+const listNone = css`
+  list-style-type: none;
+`;
+
 app.get("/", (c) => {
   return c.html(
     <Layout estilos={<Style />} rootFontSize={rootFontSize}>
       <header class={borderDouble}>
-        <h1>Spaceger</h1>
+        <h1>Bienvenido a Spaceger</h1>
         <p>
-          Esta colección de aplicaciones web son parte de mi portafolio para el
-          rol de desarrollador de software.
+          Spaceger es mi espacio digital que muestra parte del trabajo que
+          realizo en el ámbito del desarrollo de software. En este ámbito, hace
+          un tiempo ya que me ha hecho sentido enfocar mis esfuerzos en el
+          ciclo de vida del software y profundizar sus implicancias prácticas.
+          Este horizonte me ha conducido a construir una base conceptual —en
+          continuo mejoramiento— en ciencia de la computación, metodologías
+          de desarrollo de software modernas (Agile y DevOps), y de
+          mantenimiento de software existente —por algunos llamado legacy code.
         </p>
         <p>
-          A través de la lectura de libros especializados, he avanzado en la
-          construcción de una base conceptual -en continuo mejoramiento- en
-          ciencia de la computación, metodologías de desarrollo de software
-          modernas (Agile y DevOps), y de mantenimiento de software existente.
+          Presento a ustedes algunos libros destacados que he leído/apuntado o
+          estoy leyendo/apuntando:
         </p>
+        <ul>
+          <li class={listNone}>✓ The DevOps Handbook</li>
+          <li class={listNone}>✓ The Pragmatic Programmer</li>
+          <li class={listNone}>✓ Clean Architecture</li>
+          <li class={listNone}>🖉  Working Effectively with Legacy Code</li>
+        </ul>
       </header>
       <Frutakids estilos={borderDouble} />
       <Calculadora estilos={borderDouble} />
