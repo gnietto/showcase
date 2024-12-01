@@ -1,7 +1,17 @@
-import type {FC} from "hono/jsx";
-import {cx} from "hono/css";
-import {Contenedor} from "../utils/contenedor.tsx";
-import {grid,gridCols4,gridRows5,gap1,colSpan4,border2,borderSolid,textRight,textCenter} from "../utils/clasesJsx.tsx";
+import type { FC } from "hono/jsx";
+import { cx } from "hono/css";
+import { Contenedor } from "../utils/contenedor.tsx";
+import {
+  border2,
+  borderSolid,
+  colSpan4,
+  gap1,
+  grid,
+  gridCols4,
+  gridRows5,
+  textCenter,
+  textRight,
+} from "../utils/clasesJsx.tsx";
 
 export const Calculadora: FC = (props) => (
   <div class={props.estilos}>

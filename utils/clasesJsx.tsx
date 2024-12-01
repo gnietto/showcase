@@ -1,4 +1,4 @@
-import {css} from "hono/css";
+import { css } from "hono/css";
 
 export const rootFontSize = css`
   font-size: 16px;

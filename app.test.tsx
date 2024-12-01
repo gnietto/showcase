@@ -1,7 +1,6 @@
-import {Hono} from "hono";
-import {expect} from "jsr:@std/expect";
-import {app} from "./app.tsx";
-
+import { Hono } from "hono";
+import { expect } from "jsr:@std/expect";
+import { app } from "./app.tsx";
 
 Deno.test("El servidor funciona correctamente", async (t) => {
   await t.step("responde con status 200", async () => {
@@ -11,7 +10,7 @@ Deno.test("El servidor funciona correctamente", async (t) => {
 });
 
 Deno.test("La página html está en modo estándar en vez de modo quirks", async (t) => {
-  await t.step("La página html tiene doctype correcto" , async (t) => {
+  await t.step("La página html tiene doctype correcto", async (t) => {
     const res = await app.request("/");
     const contieneTexto = await res.text();
     expect(contieneTexto).toContain("<!doctype html>");
@@ -26,8 +25,8 @@ Deno.test("<Presentacion /> despliega contenido", async (t) => {
     expect(contieneTexto).toContain("Agile");
     expect(contieneTexto).toContain("DevOps");
     expect(contieneTexto).not.toContain("Germ");
-  })
- });
+  });
+});
 
 Deno.test("<Footer /> despliega contenido", async (t) => {
   await t.step("<Footer/> despliega palabras clave", async (t) => {
@@ -36,4 +35,4 @@ Deno.test("<Footer /> despliega contenido", async (t) => {
     expect(contieneTexto).toContain("Diseñado");
     expect(contieneTexto).toContain("Spaceger");
   });
- });
+});

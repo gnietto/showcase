@@ -1,7 +1,14 @@
-import type {FC} from "hono/jsx";
-import {cx} from "hono/css";
-import {Contenedor} from "../utils/contenedor.tsx";
-import {flex,justifyAround,mb4,text4xl,borderSolid,border4} from "../utils/clasesJsx.tsx";
+import type { FC } from "hono/jsx";
+import { cx } from "hono/css";
+import { Contenedor } from "../utils/contenedor.tsx";
+import {
+  border4,
+  borderSolid,
+  flex,
+  justifyAround,
+  mb4,
+  text4xl,
+} from "../utils/clasesJsx.tsx";
 
 const FrutasInfo: FC = (props) => (
   <div class={props.estilos}>
