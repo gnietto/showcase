@@ -29,6 +29,12 @@ const Layout: FC = (props) => (html`
   </html>
 `);
 
+const Footer: FC = (props) => (
+  <footer class={props.estilofooter}>
+    <p class={props.estiloparrafo}>Diseñado y codificado por Spaceger</p>
+  </footer>
+);
+
 app.get("/", (c) => {
   return c.html(
     <Layout estilos={<Style />} rootFontSize={rootFontSize}>
@@ -57,9 +63,7 @@ app.get("/", (c) => {
       </header>
       <Frutakids estilos={borderDouble} />
       <Calculadora estilos={borderDouble} />
-      <footer class={borderDouble}>
-        <p class={textCenter}>Diseñado y codificado por Spaceger</p>
-      </footer>
+      <Footer estilofooter={borderDouble} estiloparrafo={textCenter} />
     </Layout>,
   );
 });
