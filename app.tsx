@@ -55,10 +55,16 @@ app.get("/", (c) => {
           estoy leyendo/apuntando:
         </p>
         <ul>
-          <li class={listNone}>✓ The DevOps Handbook</li>
-          <li class={listNone}>✓ The Pragmatic Programmer</li>
-          <li class={listNone}>✓ Clean Architecture</li>
-          <li class={listNone}>🖉 Working Effectively with Legacy Code</li>
+          <li class={listNone}>✓ The Elements of Computer Systems (aka. Nand2Tetris, Nisan & Schocken, 2021)</li>
+          <li class={listNone}>✓ The DevOps Handbook (Kim, Humble, Debois, Willis & Forsgren, 2016/2021)</li>
+          <li class={listNone}>✓ The Pragmatic Programmer (Thomas & Hunt, 2020)</li>
+          <li class={listNone}>✓ Clean Architecture (Martin, 2018)</li>
+          <li class={listNone}>✓ Clean Code (Martin, 2009)</li>
+          <li class={listNone}>🖉Clean Agile (Martin, 2020)</li>
+          <li class={listNone}>🖉Working Effectively with Legacy Code (Feathers, 2005)</li>
+          <li class={listNone}>🖉Modern C (Gustedt, 2024)</li>
+          <li class={listNone}>🖉Computer Networking: A Top Down Approach (Kurose & Ross, 2020)</li>
+          <li class={listNone}>...entre otros.</li>
         </ul>
       </header>
       <Frutakids estilos={borderDouble} />
