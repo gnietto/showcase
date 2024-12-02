@@ -7,13 +7,13 @@ Deno.test("El servidor funciona correctamente", async (t) => {
     expect(res.status).toBe(200);
 });
 
-Deno.test("La página html está en modo estándar en vez de modo quirks", async (t) => {
+Deno.test("El documento html es servido en modo estándar html5", async (t) => {
     const res = await app.request("/");
     const contieneTexto = await res.text();
     expect(contieneTexto).toContain("<!doctype html>");
 });
 
-Deno.test("<Presentacion /> despliega contenido", async (t) => {
+Deno.test("El componente Presentacion despliega contenido", async (t) => {
     const res = await app.request("/");
     const contieneTexto = await res.text();
     expect(contieneTexto).toContain("Spaceger");
@@ -22,7 +22,7 @@ Deno.test("<Presentacion /> despliega contenido", async (t) => {
     expect(contieneTexto).not.toContain("Germ");
 });
 
-Deno.test("<Footer /> despliega contenido", async (t) => {
+Deno.test("El componente Footer despliega contenido", async (t) => {
     const res = await app.request("/");
     const contieneTexto = await res.text();
     expect(contieneTexto).toContain("Diseñado");
