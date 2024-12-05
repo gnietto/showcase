@@ -19,8 +19,8 @@ const Layout: FC = (props) => (html`
   <html class=${props.rootFontSize}>
     <head>
       <meta charset="UTF-8" />
-      <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/svg+xml" href="/static/favicon.png" />
       <script defer src="/static/cliente.js"></script>
       <title>Spaceger</title>
       ${props.estilos}
