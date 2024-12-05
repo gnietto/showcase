@@ -129,6 +129,10 @@ export const colSpan4 = css`
   grid-column: span 4 / span 4;
 `;
 
+export const colSpan3 = css`
+  grid-column: span 3 / span 3;
+`;
+
 export const border2 = css`
   border-width: 2px;
 `;

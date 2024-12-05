@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { html } from "hono/html";
 import { Style } from "hono/css";
 import type { FC } from "hono/jsx";
+import {serveStatic} from "hono/deno";
 import { Frutakids } from "./frutakids/index.tsx";
 import { Calculadora } from "./calculadora/index.tsx";
 import {
@@ -20,6 +21,7 @@ const Layout: FC = (props) => (html`
       <meta charset="UTF-8" />
       <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script defer src="/static/cliente.js"></script>
       <title>Spaceger</title>
       ${props.estilos}
     </head>
@@ -34,6 +36,8 @@ const Footer: FC = (props) => (
     <p class={props.estiloparrafo}>Diseñado y codificado por Spaceger</p>
   </footer>
 );
+
+app.use("/static/*", serveStatic({root: "./"}));
 
 app.get("/", (c) => {
   return c.html(
