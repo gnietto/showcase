@@ -1,17 +1,16 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@hono/hono@^4.6.9": "4.6.9",
+    "jsr:@hono/hono@^4.6.12": "4.6.12",
     "jsr:@std/assert@*": "1.0.8",
     "jsr:@std/assert@^1.0.8": "1.0.8",
     "jsr:@std/expect@*": "1.0.8",
     "jsr:@std/internal@^1.0.5": "1.0.5",
-    "npm:@happy-dom/global-registrator@^15.11.3": "15.11.3",
-    "npm:d3-drag@3": "3.0.0"
+    "npm:happy-dom@^15.11.7": "15.11.7"
   },
   "jsr": {
-    "@hono/hono@4.6.9": {
-      "integrity": "4d4975f5c023d4416d26e6dd4a498c56e59958561733f56f55a9be57f023603b"
+    "@hono/hono@4.6.12": {
+      "integrity": "fa0b97fa7c3292f0d9957109ac07a475fe485868795b71b8e3114c284152cdb5"
     },
     "@std/assert@1.0.8": {
       "integrity": "ebe0bd7eb488ee39686f77003992f389a06c3da1bbd8022184804852b2fa641b",
@@ -31,30 +30,11 @@
     }
   },
   "npm": {
-    "@happy-dom/global-registrator@15.11.3": {
-      "integrity": "sha512-4/OC/bvvRdPfd559l4VGWCNRtG1FBKUelIZZJ7xjiliyGggQKRG1IcBSJnM+j8GOv+ONq8kXlHYvxz61yaQ2+g==",
-      "dependencies": [
-        "happy-dom"
-      ]
-    },
-    "d3-dispatch@3.0.1": {
-      "integrity": "sha512-rzUyPU/S7rwUflMyLc1ETDeBj0NRuHKKAcvukozwhshr6g6c5d8zh4c2gQjY2bZ0dXeGLWc1PF174P2tVvKhfg=="
-    },
-    "d3-drag@3.0.0": {
-      "integrity": "sha512-pWbUJLdETVA8lQNJecMxoXfH6x+mO2UQo8rSmZ+QqxcbyA3hfeprFgIT//HW2nlHChWeIIMwS2Fq+gEARkhTkg==",
-      "dependencies": [
-        "d3-dispatch",
-        "d3-selection"
-      ]
-    },
-    "d3-selection@3.0.0": {
-      "integrity": "sha512-fmTRWbNMmsmWq6xJV8D19U/gw/bwrHfNXxrIN+HfZgnzqTHp9jOmKMhsTUjXOJnZOdZY9Q28y4yebKzqDKlxlQ=="
-    },
     "entities@4.5.0": {
       "integrity": "sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw=="
     },
-    "happy-dom@15.11.3": {
-      "integrity": "sha512-MZFy3YpoX4jnQbgrTWv35gpKxvw8y9FRSOIO6CIYmpZjxbkobaB0sAW+EXCxwTZcMvvmrjD59/NYvyld6nABfw==",
+    "happy-dom@15.11.7": {
+      "integrity": "sha512-KyrFvnl+J9US63TEzwoiJOQzZBJY7KgBushJA8X61DMbNsH+2ONkDuLDnCnwUiPTF42tLoEmrPyoqbenVA5zrg==",
       "dependencies": [
         "entities",
         "webidl-conversions",
@@ -287,9 +267,8 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@^4.6.9",
-      "npm:@happy-dom/global-registrator@^15.11.3",
-      "npm:d3-drag@3"
+      "jsr:@hono/hono@^4.6.12",
+      "npm:happy-dom@^15.11.7"
     ]
   }
 }

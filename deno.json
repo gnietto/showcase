@@ -3,9 +3,8 @@
     "start": "deno run --watch-hmr --allow-net --allow-read main.ts"
   },
   "imports": {
-    "happy-dom": "npm:@happy-dom/global-registrator@^15.11.3",
-    "hono": "jsr:@hono/hono@^4.6.9",
-    "d3-drag": "npm:d3-drag@^3.0.0"
+    "happy-dom": "npm:happy-dom@^15.11.7",
+    "hono": "jsr:@hono/hono@^4.6.12"
   },
   "compilerOptions": {
     "jsx": "precompile",
