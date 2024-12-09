@@ -8,6 +8,7 @@ import {
   justifyAround,
   mb4,
   text4xl,
+  size12
 } from "../utils/clasesJsx.tsx";
 
 const FrutasInfo: FC = (props) => (
@@ -63,10 +64,10 @@ export const Frutakids: FC = (props) => (
         estiloinfofruta={cx(borderSolid, text4xl)}
       />
       <Boxes
-        estilobox={cx(border4, borderSolid, text4xl)}
+        estilobox={cx(border4, borderSolid, text4xl, size12)}
         estilos={cx(flex, justifyAround)}
         estilocomparador={cx(text4xl)}
-        box1="|-----|"
+        box1=""
       />
       <Banner
         mensaje="Ordena las frutas según su precio de mayor a menor"

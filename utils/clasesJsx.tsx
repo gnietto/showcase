@@ -148,3 +148,8 @@ export const gap1 = css`
 export const listNone = css`
   list-style-type: none;
 `;
+
+export const size12 = css`
+  width: 3rem;
+  height: 3rem;
+`
