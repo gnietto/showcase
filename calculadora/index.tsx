@@ -17,8 +17,9 @@ export const Calculadora: FC = (props) => (
   <div class={props.estilos}>
     <h1>Calculadora JSX</h1>
     <p>
-      Calcula operaciones aritméticas simples tal como una calculadora manual.
+      Calculadora JSX es una calculadora básica codificada usando la sintaxis JSX disponible para aplicaciones web Typescript/Javascript.
     </p>
+    <p> Agregaré más funcionalidades a esta aplicación de forma gradual. </p>
     <Contenedor layout={cx(grid, gridCols4, gridRows5, gap1)}>
       <div id="visor" class={cx(colSpan3, border2, borderSolid, textRight)}>0</div>
       <div class={cx(border2, borderSolid, textCenter)} data-limpiardata="">Limpia</div>
