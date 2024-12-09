@@ -12,20 +12,20 @@ import {
 
 const FrutasInfo: FC = (props) => (
   <div class={props.estilos}>
-    <div class={props.estilofruta}>{props.fruta1}</div>
-    <div class={props.estilofruta}>{props.fruta2}</div>
-    <div class={props.estilofruta}>{props.fruta3}</div>
+    <div id="fruta1" class={props.estilofruta} draggable data-drag="a">{props.fruta1}</div>
+    <div id="fruta2" class={props.estilofruta} draggable data-drag="a">{props.fruta2}</div>
+    <div id="fruta3" class={props.estilofruta} draggable data-drag="a">{props.fruta3}</div>
     <div class={props.estiloinfofruta}>{props.infofruta}</div>
   </div>
 );
 
 const Boxes: FC = (props) => (
   <div class={props.estilos}>
-    <div class={props.estilobox}>{props.box1}</div>
+    <div class={props.estilobox} data-drop="b">{props.box1}</div>
     <div class={props.estilocomparador}>{">"}</div>
-    <div class={props.estilobox}>{props.box1}</div>
+    <div class={props.estilobox} data-drop="b">{props.box1}</div>
     <div class={props.estilocomparador}>{">"}</div>
-    <div class={props.estilobox}>{props.box1}</div>
+    <div class={props.estilobox} data-drop="b">{props.box1}</div>
   </div>
 );
 
