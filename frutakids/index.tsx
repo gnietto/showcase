@@ -14,9 +14,9 @@ import {
 
 const FrutasInfo: FC = (props) => (
   <div class={props.estilos}>
-    <div id="fruta1" class={props.estilofruta} draggable data-drag="a">{props.fruta1}</div>
-    <div id="fruta2" class={props.estilofruta} draggable data-drag="a">{props.fruta2}</div>
-    <div id="fruta3" class={props.estilofruta} draggable data-drag="a">{props.fruta3}</div>
+    <div id="fruta1" class={props.estilofruta} draggable data-drag="a" data-nombrefruta1={props.nombrefruta1} data-preciofruta1={props.preciofruta1}>{props.fruta1}</div>
+    <div id="fruta2" class={props.estilofruta} draggable data-drag="a" data-nombrefruta1={props.nombrefruta2} data-preciofruta1={props.preciofruta2}>{props.fruta2}</div>
+    <div id="fruta3" class={props.estilofruta} draggable data-drag="a" data-nombrefruta1={props.nombrefruta3} data-preciofruta1={props.preciofruta3}>{props.fruta3}</div>
     <div class={props.estiloinfofruta}>{props.infofruta}</div>
   </div>
 );
@@ -85,6 +85,12 @@ export const Frutakids: FC = (props) => {
         estilos={cx(flex, justifyAround, mb4)}
         estilofruta={cx(text4xl)}
         estiloinfofruta={cx(borderSolid, text4xl)}
+        nombrefruta1={seleccionFrutas[0].nombre}
+        preciofruta1={seleccionFrutas[0].precio}
+        nombrefruta2={seleccionFrutas[1].nombre}
+        preciofruta2={seleccionFrutas[1].precio}
+        nombrefruta3={seleccionFrutas[2].nombre}
+        preciofruta3={seleccionFrutas[2].precio}
       />
       <Boxes
         estilobox={cx(border4, borderSolid, text4xl, size12)}
