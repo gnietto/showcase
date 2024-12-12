@@ -152,4 +152,11 @@ export const listNone = css`
 export const size12 = css`
   width: 3rem;
   height: 3rem;
-`
+`;
+
+
+// clases custom
+export const text2xlCustom = css`
+  font-size: 1.5rem;
+  line-height:0.75rem;
+`;

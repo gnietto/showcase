@@ -63,3 +63,26 @@ cajas.forEach((caja) => {
 cajas.forEach((caja) => {
   caja.addEventListener("drop", finArrastre);
 });
+
+
+//feat(frutakids): despliega info de frutas cuando el usuario hace click en ella
+const nombreFruta = document.getElementById("textonombrefruta");
+const precioFruta = document.getElementById("textopreciofruta");
+const imagenFruta = document.getElementById("imagenfruta");
+const inicioInfo = document.getElementById("inicioinfofrutas");
+
+function muestraInfoFruta () {
+  const frutaClickeada = event.currentTarget;
+  const nombre = frutaClickeada.getAttribute('data-nombre');
+  const precio = frutaClickeada.getAttribute('data-precio');
+  const imagen = frutaClickeada.getAttribute('data-imagen');
+
+  inicioInfo.textContent = "";
+  imagenFruta.textContent = `${imagen}`;
+  nombreFruta.textContent = `${nombre}`;
+  precioFruta.textContent = `$${precio}`;
+};
+
+frutas.forEach((fruta) => {
+  fruta.addEventListener("click", muestraInfoFruta)
+});

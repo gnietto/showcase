@@ -9,6 +9,7 @@ import {
   mb4,
   size12,
   text4xl,
+  text2xlCustom,
 } from "../utils/clasesJsx.tsx";
 
 const FrutasInfo: FC = (props) => (
@@ -18,8 +19,9 @@ const FrutasInfo: FC = (props) => (
       class={props.estilofruta}
       draggable
       data-drag="a"
-      data-nombrefruta1={props.nombrefruta1}
-      data-preciofruta1={props.preciofruta1}
+      data-imagen={props.imagenfruta1}
+      data-nombre={props.nombrefruta1}
+      data-precio={props.preciofruta1}
     >
       {props.fruta1}
     </div>
@@ -28,8 +30,9 @@ const FrutasInfo: FC = (props) => (
       class={props.estilofruta}
       draggable
       data-drag="a"
-      data-nombrefruta1={props.nombrefruta2}
-      data-preciofruta1={props.preciofruta2}
+      data-imagen={props.imagenfruta2}
+      data-nombre={props.nombrefruta2}
+      data-precio={props.preciofruta2}
     >
       {props.fruta2}
     </div>
@@ -38,12 +41,18 @@ const FrutasInfo: FC = (props) => (
       class={props.estilofruta}
       draggable
       data-drag="a"
-      data-nombrefruta1={props.nombrefruta3}
-      data-preciofruta1={props.preciofruta3}
+      data-imagen={props.imagenfruta3}
+      data-nombre={props.nombrefruta3}
+      data-precio={props.preciofruta3}
     >
       {props.fruta3}
     </div>
-    <div class={props.estiloinfofruta}>{props.infofruta}</div>
+    <div class={props.estiloinfofruta}>
+      <p id="inicioinfofrutas" class={props.estiloiniciofruta}>{props.infofruta}</p>
+      <p id="imagenfruta" class={props.estiloimagenfruta}> </p>
+      <p id="textonombrefruta" class={props.estilonombrefruta}></p>
+      <p id="textopreciofruta" class={props.estilopreciofruta}></p>
+    </div>
   </div>
 );
 
@@ -110,13 +119,20 @@ export const Frutakids: FC = (props) => {
           infofruta="?"
           estilos={cx(flex, justifyAround, mb4)}
           estilofruta={cx(text4xl)}
-          estiloinfofruta={cx(borderSolid, text4xl)}
+          estiloinfofruta={cx(borderSolid)}
+          imagenfruta1={seleccionFrutas[0].imagen}
           nombrefruta1={seleccionFrutas[0].nombre}
           preciofruta1={seleccionFrutas[0].precio}
+          imagenfruta2={seleccionFrutas[1].imagen}
           nombrefruta2={seleccionFrutas[1].nombre}
           preciofruta2={seleccionFrutas[1].precio}
+          imagenfruta3={seleccionFrutas[2].imagen}
           nombrefruta3={seleccionFrutas[2].nombre}
           preciofruta3={seleccionFrutas[2].precio}
+          estiloiniciofruta={text4xl}
+          estiloimagenfruta={text4xl}
+          estilonombrefruta={text2xlCustom}
+          estilopreciofruta={text2xlCustom}
         />
         <Boxes
           estilobox={cx(border4, borderSolid, text4xl, size12)}
