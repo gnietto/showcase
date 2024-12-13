@@ -86,3 +86,29 @@ function muestraInfoFruta () {
 frutas.forEach((fruta) => {
   fruta.addEventListener("click", muestraInfoFruta)
 });
+
+
+//feat(frutakids): lógica de la barra de evaluación y feedback al usuario
+const banner = document.getElementById("banner");
+const mensajeFeedback = document.getElementById("feedback");
+const botonInicial = document.getElementById("botoninicial");
+
+function evaluarOrdenamiento () {
+  const precioFrutasCajon = document.querySelectorAll("[data-precio]");
+  const preciosCajon = Array.from(precioFrutasCajon)
+    .map(cajon => cajon.getAttribute("data-precio"));
+  const ordenDescendente = preciosCajon[0] > preciosCajon[1] && preciosCajon[1] > preciosCajon[2];
+
+  if (ordenDescendente) {
+    banner.style.backgroundColor = "rgb(132 204 22)";
+    mensajeFeedback.textContent = "Felicitaciones! Tu respuesta es correcta";
+    botonInicial.textContent = "Reiniciar juego";
+  } else {
+    banner.style.backgroundColor = "rgb(220 38 38)";
+    mensajeFeedback.textContent = "Error! Presiona el botón para conocer la respuesta correcta";
+    botonInicial.textContent = "Respuesta correcta";
+    botonInicial.setAttribute("id", "botoncorreccion");
+  }
+};
+
+botonInicial.addEventListener("click", evaluarOrdenamiento);

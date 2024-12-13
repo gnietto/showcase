@@ -154,6 +154,20 @@ export const size12 = css`
   height: 3rem;
 `;
 
+export const bgStone400 = css`
+  background-color: rgb(168 162 158);
+`;
+
+export const bgRed600 = css`
+  background-color: rgb(220 38 38);
+`;
+
+export const bgLime500 = css`
+  background-color: rgb(132 204 22);
+`;
+
+
+
 
 // clases custom
 export const text2xlCustom = css`

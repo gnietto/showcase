@@ -10,6 +10,7 @@ import {
   size12,
   text4xl,
   text2xlCustom,
+  bgStone400,
 } from "../utils/clasesJsx.tsx";
 
 const FrutasInfo: FC = (props) => (
@@ -67,9 +68,9 @@ const Boxes: FC = (props) => (
 );
 
 const Banner: FC = (props) => (
-  <div class={props.estilos}>
-    <p>{props.mensaje}</p>
-    <button>{props.accion}</button>
+  <div id="banner" class={props.estilos}>
+    <p id="feedback">{props.mensaje}</p>
+    <button id="botoninicial">{props.accion}</button>
   </div>
 );
 
@@ -143,7 +144,7 @@ export const Frutakids: FC = (props) => {
         <Banner
           mensaje="Ordena las frutas según su precio de mayor a menor"
           accion="Evaluar"
-          estilos={cx(flex, justifyAround)}
+          estilos={cx(flex, justifyAround, bgStone400)}
         />
       </Contenedor>
     </div>
