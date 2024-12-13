@@ -96,8 +96,8 @@ const botonInicial = document.getElementById("botoninicial");
 function evaluarOrdenamiento () {
   const precioFrutasCajon = document.querySelectorAll("[data-precio]");
   const preciosCajon = Array.from(precioFrutasCajon)
-    .map(cajon => cajon.getAttribute("data-precio"));
-  const ordenDescendente = preciosCajon[0] > preciosCajon[1] && preciosCajon[1] > preciosCajon[2];
+    .map(cajon => parseInt(cajon.getAttribute("data-precio")));
+  const ordenDescendente = (preciosCajon[0] > preciosCajon[1]) && (preciosCajon[1] > preciosCajon[2]);
 
   if (ordenDescendente) {
     banner.style.backgroundColor = "rgb(132 204 22)";
