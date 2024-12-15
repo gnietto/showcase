@@ -59,11 +59,11 @@ const FrutasInfo: FC = (props) => (
 
 const Boxes: FC = (props) => (
   <div class={props.estilos}>
-    <div class={props.estilobox} data-drop="b">{props.box1}</div>
+    <div id="cajon1" class={props.estilobox} data-drop="b">{props.box1}</div>
     <div class={props.estilocomparador}>{">"}</div>
-    <div class={props.estilobox} data-drop="b">{props.box1}</div>
+    <div id="cajon2" class={props.estilobox} data-drop="b">{props.box1}</div>
     <div class={props.estilocomparador}>{">"}</div>
-    <div class={props.estilobox} data-drop="b">{props.box1}</div>
+    <div id="cajon3" class={props.estilobox} data-drop="b">{props.box1}</div>
   </div>
 );
 

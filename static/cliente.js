@@ -103,12 +103,46 @@ function evaluarOrdenamiento () {
     banner.style.backgroundColor = "rgb(132 204 22)";
     mensajeFeedback.textContent = "Felicitaciones! Tu respuesta es correcta";
     botonInicial.textContent = "Reiniciar juego";
+    botonInicial.setAttribute("id","reiniciajuego");
   } else {
     banner.style.backgroundColor = "rgb(220 38 38)";
     mensajeFeedback.textContent = "Error! Presiona el botón para conocer la respuesta correcta";
     botonInicial.textContent = "Respuesta correcta";
-    botonInicial.setAttribute("id", "botoncorreccion");
+    botonInicial.setAttribute("id","muestrarespuesta");
   }
 };
 
+function reordenarFrutas () {
+  const precioFrutasCajon = document.querySelectorAll("[data-precio]");
+  const nodeListToArray = Array.from(precioFrutasCajon);
+  const ordenarElementosFruta = nodeListToArray.sort((a, b) => b.dataset.precio - a.dataset.precio);
+  const cajon1 = document.getElementById("cajon1");
+  const cajon2 = document.getElementById("cajon2");
+  const cajon3 = document.getElementById("cajon3");
+  cajon1.appendChild(ordenarElementosFruta[0]);
+  cajon2.appendChild(ordenarElementosFruta[1]);
+  cajon3.appendChild(ordenarElementosFruta[2]);
+};
+
 botonInicial.addEventListener("click", evaluarOrdenamiento);
+
+async function esperarElemento(id) {
+  while (!document.getElementById(id)) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+  };
+  return document.getElementById(id);
+};
+
+async function iniciaBannerRojoMuestraRespuesta() {
+  const proximoElemento = await esperarElemento("muestrarespuesta");
+  proximoElemento.addEventListener('click', () => {
+    banner.style.backgroundColor = "rgb(220 38 38)";
+    mensajeFeedback.textContent = "La respuesta correcta es ésta";
+    botonInicial.textContent = "Reiniciar juego";
+    botonInicial.setAttribute("id","reiniciajuego");
+    reordenarFrutas();
+  });
+};
+
+
+iniciaBannerRojoMuestraRespuesta();
