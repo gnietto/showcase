@@ -21,7 +21,8 @@ const Layout: FC = (props) => (html`
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/static/favicon.png" />
-      <script defer src="/static/cliente.js"></script>
+      <script defer src="/static/cliente0.js"></script>
+      <script defer src="/static/cliente1.js"></script>
       <title>Spaceger</title>
       ${props.estilos}
     </head>
