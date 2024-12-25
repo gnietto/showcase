@@ -6,6 +6,7 @@ import {serveStatic} from "hono/deno";
 import { Frutakids } from "./frutakids/index.tsx";
 import { Calculadora } from "./calculadora/index.tsx";
 import { Presentacion } from "./presentacion/index.tsx";
+import { Footer } from "./footer/index.tsx";
 import {
   borderDouble,
   listNone,
@@ -32,12 +33,6 @@ const Layout: FC = (props) => (html`
     </body>
   </html>
 `);
-
-const Footer: FC = (props) => (
-  <footer class={props.estilofooter}>
-    <p class={props.estiloparrafo}>Diseñado y codificado por Spaceger</p>
-  </footer>
-);
 
 app.use("/static/*", serveStatic({root: "./"}));
 
