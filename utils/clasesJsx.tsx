@@ -121,6 +121,14 @@ export const gridCols4 = css`
   grid-template-columns: repeat(4, minmax(0, 1fr));
 `;
 
+export const gridCols5 = css`
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+`;
+
+export const gridRows3 = css`
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+`;
+
 export const gridRows5 = css`
   grid-template-rows: repeat(5, minmax(0, 1fr));
 `;
