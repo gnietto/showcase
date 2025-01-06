@@ -71,7 +71,7 @@ export const Presentacion: FC = (props) => (
       </li>
       <li class={props.estiloLista}>
         &#9989; Ambientes de ejecución Javascript/Typescript: Node (JS) & Deno 2
-        (JS & TS)
+        (JS, JSX, TS & TSX)
       </li>
       <li class={props.estiloLista}>
         &#9989; Bibliotecas: Hono, Expressjs, Fastify & Reactjs
