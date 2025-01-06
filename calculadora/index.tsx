@@ -15,9 +15,9 @@ import {
 
 export const Calculadora: FC = (props) => (
   <div class={props.estilos}>
-    <h1>Calculadora JSX</h1>
+    <h1>Calculadora</h1>
     <p>
-      Calculadora JSX es una calculadora básica codificada usando la sintaxis JSX disponible para aplicaciones web Typescript/Javascript.
+      Calculadora básica codificada usando la sintaxis jsx disponible para aplicaciones web Typescript/Javascript.
     </p>
     <p> Agregaré más funcionalidades a esta aplicación de forma gradual. </p>
     <Contenedor layout={cx(grid, gridCols4, gridRows5, gap1)}>
