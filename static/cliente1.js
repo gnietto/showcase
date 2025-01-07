@@ -1,4 +1,3 @@
-// declarar vars sin iniciar
 let Banner1,
   Banner2,
   Banner3,
@@ -10,7 +9,6 @@ let Banner1,
   seleccionFrutas,
   FrutakidsPresentacion;
 
-// declarar fn init e iniciar vars
 const iniciarFrutakids = () => {
   canastaFrutas = [
     { nombre: "Manzana", precio: 1295, imagen: "🍎" },
@@ -115,7 +113,6 @@ const iniciarFrutakids = () => {
   contenedorFrutakids.insertAdjacentHTML("beforeend", Cajones);
   contenedorFrutakids.insertAdjacentHTML("beforeend", Banner1);
 
-  //dnd
   const tresFrutas = document.querySelectorAll("[data-drag]");
   const tresCajas = document.querySelectorAll("[data-drop]");
 
@@ -195,7 +192,6 @@ const iniciarFrutakids = () => {
       bannerInicial.outerHTML = Banner3;
 
       const muestraRespuesta = document.getElementById("muestrarespuesta");
-
       muestraRespuesta.addEventListener("click", () => {
         const precioFrutasCajon = document.querySelectorAll("[data-precio]");
 
