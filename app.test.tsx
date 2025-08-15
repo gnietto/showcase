@@ -1,6 +1,6 @@
-import { Hono } from "hono";
-import { expect } from "jsr:@std/expect";
-import { app } from "./app.tsx";
+import {DOMParser} from "@b-fuze/deno-dom"
+import {expect} from "@std/expect";
+import {app} from "./app.tsx";
 
 Deno.test("El servidor funciona correctamente", async (t) => {
     const res = await app.request("/");
