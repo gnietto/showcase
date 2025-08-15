@@ -17,7 +17,7 @@ export const Presentacion: FC = (props) => (
       software existente —por algunos llamado "legacy code".
     </p>
     <p>
-      Comparto una lista de libros que he leído/apuntado o en estudio:
+      La lista de libros que he leído/apuntado o en estudio:
     </p>
     <ul>
       <li class={props.estiloLista}>
@@ -36,30 +36,24 @@ export const Presentacion: FC = (props) => (
       </li>
       <li class={props.estiloLista}>&#9989; Clean Code (Martin, 2009)</li>
       <li class={props.estiloLista}>
+        &#9989; Test-Driven Development By Example (Beck, 2003)
+      </li>
+      <li class={props.estiloLista}>
         &#9989; Composing Software (Elliot, 2019)
       </li>
       <li class={props.estiloLista}>
         &#128221; Code Complete (McConnell, 1993/2004)
       </li>
       <li class={props.estiloLista}>
+        &#128221; Object-Oriented Software Construction (Meyer, 1988/1997)
+      </li>
+      <li class={props.estiloLista}>
         &#128221; Object Design (Wirfs-Brock & McKean, 2003)
       </li>
+      <li class={props.estiloLista}>&#128221; Clean Agile (Martin, 2020)</li>
+      <li class={props.estiloLista}>&#128221; The Art of Agile Development (Shore, 2007/2022)</li>
       <li class={props.estiloLista}>
         &#128221; The Debugging Book (Zeller, 2021/2024)
-      </li>
-      <li class={props.estiloLista}>
-        &#128221; Test-Driven Development By Example (Beck, 2003)
-      </li>
-      <li class={props.estiloLista}>&#128221; Clean Agile (Martin, 2020)</li>
-      <li class={props.estiloLista}>
-        &#128221; Computer Networking: A Top Down Approach (Kurose & Ross,
-        2000/2020)
-      </li>
-      <li class={props.estiloLista}>
-        &#128221; YDKJSY: Scope and Closures (Simpson, 2014/2020)
-      </li>
-      <li class={props.estiloLista}>
-        &#128221; YDKJS: This and Prototypes (Simpson, 2014)
       </li>
     </ul>
     <p>
@@ -70,14 +64,16 @@ export const Presentacion: FC = (props) => (
         &#9989; Lenguajes de programación: Typescript & Javascript
       </li>
       <li class={props.estiloLista}>
-        &#9989; Ambientes de ejecución Javascript/Typescript: Node (JS) & Deno 2
-        (JS, JSX, TS & TSX)
+        &#9989; Ambientes de ejecución: Node & Deno 2
       </li>
       <li class={props.estiloLista}>
-        &#9989; Bibliotecas: Hono, Expressjs, Fastify & Reactjs
+        &#9989; Bibliotecas: Hono, Expressjs, Fastify, Reactjs & D3
       </li>
       <li class={props.estiloLista}>
-        &#9989; Dev server + builder para web front-end: Vite
+        &#9989; Bundler + servidor de desarrollo web: Vite
+      </li>
+      <li class={props.estiloLista}>
+        &#9989; Test runner: Jest, Vitest & Deno
       </li>
       <li class={props.estiloLista}>
         &#9989; Herramientas en navegador web: Debugger, Inspector, Consola
