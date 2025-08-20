@@ -141,6 +141,14 @@ export const colSpan3 = css`
   grid-column: span 3 / span 3;
 `;
 
+export const colSpan2 = css`
+  grid-column : span 2 / span 2;
+`
+
+export const colSpan5 = css`
+  grid-column: span 5 / span 5;
+`
+
 export const border2 = css`
   border-width: 2px;
 `;
@@ -174,8 +182,32 @@ export const bgLime500 = css`
   background-color: rgb(132 204 22);
 `;
 
+export const borderNone = css`
+  border-style: none;
+`;
+export const itemsCenter = css`
+  align-items: center;
+`
+export const my3 = css`
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+`
+export const myAuto = css`
+  margin-top: auto;
+  margin-bottom: auto;
+`
 
+export const h5 = css`
+ height: 1.25rem;
+`
 
+export const h20 = css`
+ height: 5rem;
+`
+
+export const h32 = css`
+ height: 8rem;
+`
 
 // clases custom
 export const text2xlCustom = css`
